@@ -1,0 +1,202 @@
+/* Custom styles for the timetable generator */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Timetable specific styles */
+.day-header {
+    color: #495057;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.time-slot-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 100%;
+    overflow: hidden;
+}
+
+.slot-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.slot-content {
+    padding: 15px;
+    min-height: 150px;
+}
+
+.session-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-left: 4px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+.session-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.session-item.theory {
+    border-left-color: #28a745;
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+}
+
+.session-item.practical {
+    border-left-color: #ffc107;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+}
+
+.session-item.history {
+    border-left-color: #17a2b8;
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+}
+
+.session-item.test {
+    border-left-color: #dc3545;
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+}
+
+.session-name {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.session-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.session-details small {
+    color: #6c757d;
+}
+
+.no-session {
+    text-align: center;
+    padding: 40px 15px;
+    color: #6c757d;
+}
+
+.no-session i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Loading animation */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Form enhancements */
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .time-slot-card {
+        margin-bottom: 15px;
+    }
+    
+    .day-header {
+        font-size: 1.5rem;
+    }
+    
+    .slot-content {
+        min-height: 120px;
+    }
+}
+
+/* Badge enhancements */
+.badge {
+    font-size: 0.8rem;
+    padding: 0.5em 0.8em;
+}
+
+/* Card hover effects */
+.card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Progress bar for generation */
+.progress-container {
+    display: none;
+    margin-top: 20px;
+}
+
+.progress {
+    height: 25px;
+    border-radius: 15px;
+}
+
+/* Success animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.day-section {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.day-section:nth-child(2) { animation-delay: 0.1s; }
+.day-section:nth-child(3) { animation-delay: 0.2s; }
+.day-section:nth-child(4) { animation-delay: 0.3s; }
+.day-section:nth-child(5) { animation-delay: 0.4s; }
+.day-section:nth-child(6) { animation-delay: 0.5s; }
